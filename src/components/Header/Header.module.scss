@@ -1,0 +1,102 @@
+/* Прилипшая полупрозрачная шапка с мягкой тенью (glass-like) */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Внутренняя навигация */
+.headerNav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  padding: 12px 16px;
+  margin: 0;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+/* Лого слева, остальное вправо */
+.headerNav li:first-child {
+  margin-right: auto;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  display: block;
+}
+
+/* Убираем hover и active эффекты для логотипа */
+.headerNav li:first-child a:hover {
+  background-color: transparent;
+}
+
+.headerNav li:first-child a:active {
+  transform: none;
+}
+
+/* Ссылки: современная типографика и ховер/актив */
+.headerNav a {
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: background-color 160ms ease, color 160ms ease, transform 80ms ease;
+}
+
+.headerNav a:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.headerNav a:active {
+  transform: translateY(1px);
+}
+
+/* Активная страница из NavLink (v6) */
+// .headerNav a[aria-current="page"] {
+//   color: #2e7d32;
+//   background-color: rgba(46, 125, 50, 0.12);
+// }
+
+/* Фокус-доступность */
+.headerNav a:focus-visible {
+  outline: 2px solid rgba(46, 125, 50, 0.6);
+  outline-offset: 2px;
+}
+
+/* Адаптивные отступы */
+@media (max-width: 768px) {
+  .headerNav {
+    gap: 12px;
+    padding: 10px 12px;
+  }
+  .logo {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Тёмная тема */
+// @media (prefers-color-scheme: dark) {
+//   .header {
+//     background-color: rgba(18, 18, 18, 0.65);
+//     border-bottom-color: rgba(255, 255, 255, 0.08);
+//   }
+//   .headerNav a {
+//     color: #f0f0f0;
+//   }
+//   .headerNav a:hover {
+//     background-color: rgba(255, 255, 255, 0.08);
+//   }
+//   .headerNav a[aria-current="page"] {
+//     color: #81c784;
+//     background-color: rgba(129, 199, 132, 0.14);
+//   }
+// }
