@@ -15,6 +15,9 @@ const Header: React.FC = () => {
           <li>
             <NavLink to="/about">about</NavLink>
           </li>
+          <li>
+            <NavLink to="/profile">my collection</NavLink>
+          </li>
         </ul>
       </nav>
     </header>

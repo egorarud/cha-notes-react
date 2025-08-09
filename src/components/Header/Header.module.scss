@@ -12,9 +12,9 @@
 .headerNav {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
   list-style: none;
-  padding: 12px 16px;
+  padding: 8px 12px;
   margin: 0;
   max-width: 1200px;
   margin-inline: auto;
@@ -40,13 +40,18 @@
   transform: none;
 }
 
+/* Убираем внутренние отступы у ссылки-обёртки логотипа, чтобы не увеличивать высоту хэдера */
+.headerNav li:first-child a {
+  padding: 0;
+}
+
 /* Ссылки: современная типографика и ховер/актив */
 .headerNav a {
   color: #111;
   text-decoration: none;
   font-weight: 600;
   line-height: 1;
-  padding: 10px 12px;
+  padding: 8px 10px;
   border-radius: 10px;
   transition: background-color 160ms ease, color 160ms ease, transform 80ms ease;
 }
@@ -59,12 +64,6 @@
   transform: translateY(1px);
 }
 
-/* Активная страница из NavLink (v6) */
-// .headerNav a[aria-current="page"] {
-//   color: #2e7d32;
-//   background-color: rgba(46, 125, 50, 0.12);
-// }
-
 /* Фокус-доступность */
 .headerNav a:focus-visible {
   outline: 2px solid rgba(46, 125, 50, 0.6);
@@ -74,8 +73,8 @@
 /* Адаптивные отступы */
 @media (max-width: 768px) {
   .headerNav {
-    gap: 12px;
-    padding: 10px 12px;
+    gap: 10px;
+    padding: 8px 10px;
   }
   .logo {
     width: 32px;

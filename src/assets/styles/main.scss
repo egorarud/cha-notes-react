@@ -105,6 +105,7 @@ body {
   overflow: visible;
   max-height: none;
   padding: 24px 0 48px;
+  
 }
 
 .vsnap__item {
@@ -123,5 +124,26 @@ body {
   .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
+  }
+}
+
+/* Utility: responsive square grid like Instagram */
+.grid-squares {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .grid-squares {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+@media (min-width: 960px) {
+  .grid-squares {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 16px;
   }
 }
